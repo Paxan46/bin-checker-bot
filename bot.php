@@ -12,7 +12,7 @@
     $start_msg = $_ENV['START_MSG']; 
 
 if($message == "/start"){
-    send_message($chat_id,$message_id, "***Hey $firstname \nUse !bin xxxxxx to Check BIN \n$start_msg***");
+    send_message($chat_id,$message_id, "***Xos Geldin $firstname \nZehmet Olmasa !bin xxxxxx Reqemli Bini Daxil Et \n$start_msg***");
 }
 
 //Bin Lookup
@@ -49,22 +49,22 @@ $flag = $data['data']['countryInfo']['emoji'];
  $result1 = $data['result'];
 
     if ($result1 == true) {
-    send_message($chat_id,$message_id, "***✅ Valid BIN
+    send_message($chat_id,$message_id, "***✅ Islek BIN
 Bin: $bin
-Brand: $brand
+Marka: $brand
 Level: $level
 Bank: $bank
-Country: $country $flag
+Olke: $country $flag
 Type:$type
 Checked By @$username ***");
     }
 else {
-    send_message($chat_id,$message_id, "***Enter Valid BIN***");
+    send_message($chat_id,$message_id, "***Valid Bin Daxil Et***");
 }
 }
     function send_message($chat_id,$message_id, $message){
         $text = urlencode($message);
-        $apiToken = $_ENV['API_TOKEN'];  
+        $apiToken = $_ENV['1887163170:AAGsX1c_biJZ6qgenjGqK563zC5NLk1UsWs'];  
         file_get_contents("https://api.telegram.org/bot$apiToken/sendMessage?chat_id=$chat_id&reply_to_message_id=$message_id&text=$text&parse_mode=Markdown");
     }
 ?>
